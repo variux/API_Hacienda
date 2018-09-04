@@ -179,8 +179,7 @@ function genXMLFe() {
                   <UnidadMedida>' . $d->unidadMedida . '</UnidadMedida>
                   <Detalle>' . $d->detalle . '</Detalle>
                   <PrecioUnitario>' . $d->precioUnitario . '</PrecioUnitario>
-                  <MontoTotal>' . $d->montoTotal . '</MontoTotal>
-                  <SubTotal>' . $d->subtotal . '</SubTotal>';
+                  <MontoTotal>' . $d->montoTotal . '</MontoTotal>';
 
         if (isset($d->montoDescuento) && $d->montoDescuento != "") {
             $xmlString .= '<MontoDescuento>' . $d->montoDescuento . '</MontoDescuento>';
@@ -188,6 +187,7 @@ function genXMLFe() {
         if (isset($d->naturalezaDescuento) && $d->naturalezaDescuento != "") {
             $xmlString .= '<NaturalezaDescuento>' . $d->naturalezaDescuento . '</NaturalezaDescuento>';
         }
+        $xmlString .= '<SubTotal>' . $d->subtotal . '</SubTotal>';
         if (isset($d->impuesto) && $d->impuesto != "") {
             foreach ($d->impuesto as $i) {
                 $xmlString .= '<Impuesto>
